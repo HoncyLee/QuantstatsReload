@@ -2,6 +2,8 @@
 
 ## - [Quantstats](https://github.com/ranaroussi/quantstats) Reloaded Version
 
+## - Credit: [Ran Aroussi](https://github.com/ranaroussi)
+
 Last update: 2025-07-08
 
 Fixed bugs and adopted to latest Numpy, Pandas and Seaborn
