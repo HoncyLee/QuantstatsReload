@@ -49,7 +49,7 @@ qs.stats.sharpe(stock)
 stock.plot_snapshot(title=f'{ticker} Performance', show=True)
 ```
 
-![png](output_2_0.png)
+![png](img/output_2_0.png)
 
 ```python
 qs.reports.metrics(stock, mode='basic')
@@ -186,37 +186,37 @@ qs.reports.metrics(stock, mode='full')
 qs.reports.plots(stock, mode='basic')
 ```
 
-![png](output_5_0.png)
+![png](img/output_5_0.png)
 
-![png](output_5_1.png)
+![png](img/output_5_1.png)
 
 ```python
 qs.reports.plots(stock, mode='full')
 ```
 
-![png](output_6_0.png)
+![png](img/output_6_0.png)
 
-![png](output_6_1.png)
+![png](img/output_6_1.png)
 
-![png](output_6_2.png)
+![png](img/output_6_2.png)
 
-![png](output_6_3.png)
+![png](img/output_6_3.png)
 
-![png](output_6_4.png)
+![png](img/output_6_4.png)
 
-![png](output_6_5.png)
+![png](img/output_6_5.png)
 
-![png](output_6_6.png)
+![png](img/output_6_6.png)
 
-![png](output_6_7.png)
+![png](img/output_6_7.png)
 
-![png](output_6_8.png)
+![png](img/output_6_8.png)
 
-![png](output_6_9.png)
+![png](img/output_6_9.png)
 
-![png](output_6_10.png)
+![png](img/output_6_10.png)
 
-![png](output_6_11.png)
+![png](img/output_6_11.png)
 
 ```python
 
