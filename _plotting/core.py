@@ -20,10 +20,10 @@
 
 import matplotlib.pyplot as _plt
 
-try:
-    _plt.rcParams["font.family"] = "Arial"
-except Exception:
-    pass
+# try:
+#     _plt.rcParams["font.family"] = "Arial"
+# except Exception:
+#     pass
 
 import matplotlib.dates as _mdates
 from matplotlib.ticker import (
