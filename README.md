@@ -226,6 +226,9 @@ qs.reports.plots(stock, mode='full')
 
 # import QuantstatsReload in Google Colab
 
+- Link your GitHub account in Colab
+- Setting -> GitHub -> Authorise your own account
+
 ```python
 !git clone https://github.com/HoncyLee/QuantstatsReload.git
 import QuantstatsReload as qs
