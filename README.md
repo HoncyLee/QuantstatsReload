@@ -223,3 +223,12 @@ qs.reports.plots(stock, mode='full')
 ```python
 
 ```
+
+# import QuantstatsReload in Google Colab
+
+```python
+!git clone https://github.com/HoncyLee/QuantstatsReload.git
+import QuantstatsReload as qs
+```
+
+![png](img/colab.png)
