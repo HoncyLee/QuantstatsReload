@@ -64,7 +64,7 @@ def snapshot(
     grayscale=False,
     figsize=(10, 8),
     title="Portfolio Summary",
-    fontname="Arial",
+    #fontname="Arial",
     lw=1.5,
     mode="comp",
     subtitle=True,
@@ -120,7 +120,8 @@ def snapshot(
         ax.spines["left"].set_visible(False)
 
     fig.suptitle(
-        title, fontsize=14, y=0.97, fontname=fontname, fontweight="bold", color="black"
+        title, fontsize=14, y=0.97, #fontname=fontname, 
+        fontweight="bold", color="black"
     )
 
     fig.set_facecolor("white")
@@ -149,7 +150,8 @@ def snapshot(
             )
 
     axes[0].set_ylabel(
-        "Cumulative Return", fontname=fontname, fontweight="bold", fontsize=12
+        "Cumulative Return", #fontname=fontname, 
+        fontweight="bold", fontsize=12
     )
     if isinstance(returns, _pd.Series):
         axes[0].plot(
@@ -181,7 +183,8 @@ def snapshot(
     ddmin_ticks = int(_utils._round_to_closest(ddmin_ticks, 5))
 
     # ddmin_ticks = int(_utils._round_to_closest(ddmin, 5))
-    axes[1].set_ylabel("Drawdown", fontname=fontname, fontweight="bold", fontsize=12)
+    axes[1].set_ylabel("Drawdown", #fontname=fontname, 
+                       fontweight="bold", fontsize=12)
     axes[1].set_yticks(_np.arange(-ddmin, 0, step=ddmin_ticks))
     if isinstance(dd, _pd.Series):
         axes[1].plot(dd, color=colors[2], lw=1 if grayscale else lw, zorder=1)
@@ -202,7 +205,8 @@ def snapshot(
     # axes[1].legend(fontsize=12)
 
     axes[2].set_ylabel(
-        "Daily Return", fontname=fontname, fontweight="bold", fontsize=12
+        "Daily Return", #fontname=fontname, 
+        fontweight="bold", fontsize=12
     )
     if isinstance(returns, _pd.Series):
         axes[2].plot(
@@ -271,7 +275,7 @@ def earnings(
     grayscale=False,
     figsize=(10, 6),
     title="Portfolio Earnings",
-    fontname="Arial",
+    #fontname="Arial",
     lw=1.5,
     subtitle=True,
     savefig=None,
@@ -294,7 +298,8 @@ def earnings(
     ax.spines["left"].set_visible(False)
 
     fig.suptitle(
-        f"    {title}", fontsize=12, y=0.95, fontname=fontname, fontweight="bold", color="black"
+        f"    {title}", fontsize=12, y=0.95, #fontname=fontname, 
+        fontweight="bold", color="black"
     )
 
     if subtitle:
@@ -334,7 +339,7 @@ def earnings(
 
     ax.set_ylabel(
         "Value of  ${:,.0f}".format(start_balance),
-        fontname=fontname,
+        #fontname=fontname,
         fontweight="bold",
         fontsize=11,
     )
@@ -379,7 +384,7 @@ def returns(
     benchmark=None,
     grayscale=False,
     figsize=(10, 6),
-    fontname="Arial",
+    #fontname="Arial",
     lw=1.5,
     match_volatility=False,
     compound=True,
@@ -418,7 +423,7 @@ def returns(
         cumulative=cumulative,
         lw=lw,
         figsize=figsize,
-        fontname=fontname,
+        #fontname=fontname,
         grayscale=grayscale,
         subtitle=subtitle,
         savefig=savefig,
@@ -433,7 +438,7 @@ def log_returns(
     benchmark=None,
     grayscale=False,
     figsize=(10, 5),
-    fontname="Arial",
+    #fontname="Arial",
     lw=1.5,
     match_volatility=False,
     compound=True,
@@ -475,7 +480,7 @@ def log_returns(
         cumulative=cumulative,
         lw=lw,
         figsize=figsize,
-        fontname=fontname,
+        #fontname=fontname,
         grayscale=grayscale,
         subtitle=subtitle,
         savefig=savefig,
@@ -490,7 +495,7 @@ def daily_returns(
     benchmark,
     grayscale=False,
     figsize=(10, 4),
-    fontname="Arial",
+    #fontname="Arial",
     lw=0.5,
     log_scale=False,
     ylabel="Returns",
@@ -520,7 +525,7 @@ def daily_returns(
         compound=False,
         lw=lw,
         figsize=figsize,
-        fontname=fontname,
+        #fontname=fontname,
         grayscale=grayscale,
         subtitle=subtitle,
         savefig=savefig,
@@ -533,7 +538,7 @@ def daily_returns(
 def yearly_returns(
     returns,
     benchmark=None,
-    fontname="Arial",
+    #fontname="Arial",
     grayscale=False,
     hlw=1.5,
     hlcolor="red",
@@ -572,7 +577,7 @@ def yearly_returns(
     fig = _core.plot_returns_bars(
         returns,
         benchmark,
-        fontname=fontname,
+        #fontname=fontname,
         hline=returns.mean(),
         hlw=hlw,
         hllabel=hllabel,
@@ -594,7 +599,7 @@ def yearly_returns(
 
 def distribution(
     returns,
-    fontname="Arial",
+    #fontname="Arial",
     grayscale=False,
     ylabel=True,
     figsize=(10, 6),
@@ -610,7 +615,7 @@ def distribution(
 
     fig = _core.plot_distribution(
         returns,
-        fontname=fontname,
+        #fontname=fontname,
         grayscale=grayscale,
         figsize=figsize,
         ylabel=ylabel,
@@ -628,7 +633,7 @@ def histogram(
     returns,
     benchmark=None,
     resample="ME",
-    fontname="Arial",
+    #fontname="Arial",
     grayscale=False,
     figsize=(10, 5),
     ylabel=True,
@@ -660,7 +665,7 @@ def histogram(
         benchmark,
         resample=resample,
         grayscale=grayscale,
-        fontname=fontname,
+        #fontname=fontname,
         title="Distribution of %sReturns" % title,
         figsize=figsize,
         ylabel=ylabel,
@@ -675,7 +680,7 @@ def drawdown(
     returns,
     grayscale=False,
     figsize=(10, 5),
-    fontname="Arial",
+    #fontname="Arial",
     lw=1,
     log_scale=False,
     match_volatility=False,
@@ -704,7 +709,7 @@ def drawdown(
         lw=lw,
         figsize=figsize,
         ylabel=ylabel,
-        fontname=fontname,
+        #fontname=fontname,
         grayscale=grayscale,
         subtitle=subtitle,
         savefig=savefig,
@@ -719,7 +724,7 @@ def drawdowns_periods(
     periods=5,
     lw=1.5,
     log_scale=False,
-    fontname="Arial",
+    #fontname="Arial",
     grayscale=False,
     title=None,
     figsize=(10, 5),
@@ -738,7 +743,7 @@ def drawdowns_periods(
         periods=periods,
         lw=lw,
         log_scale=log_scale,
-        fontname=fontname,
+        #fontname=fontname,
         grayscale=grayscale,
         title=title,
         figsize=figsize,
@@ -760,7 +765,7 @@ def rolling_beta(
     window2=252,
     window2_label="12-Months",
     lw=1.5,
-    fontname="Arial",
+    #fontname="Arial",
     grayscale=False,
     figsize=(10, 3),
     ylabel=True,
@@ -783,7 +788,7 @@ def rolling_beta(
         window2=window2,
         window2_label=window2_label,
         title="Rolling Beta to Benchmark",
-        fontname=fontname,
+        #fontname=fontname,
         grayscale=grayscale,
         lw=lw,
         figsize=figsize,
@@ -803,7 +808,7 @@ def rolling_volatility(
     period_label="6-Months",
     periods_per_year=252,
     lw=1.5,
-    fontname="Arial",
+    #fontname="Arial",
     grayscale=False,
     figsize=(10, 3),
     ylabel="Volatility",
@@ -827,7 +832,7 @@ def rolling_volatility(
         hlw=1.5,
         ylabel=ylabel,
         title="Rolling Volatility (%s)" % period_label,
-        fontname=fontname,
+        #fontname=fontname,
         grayscale=grayscale,
         lw=lw,
         figsize=figsize,
@@ -847,7 +852,7 @@ def rolling_sharpe(
     period_label="6-Months",
     periods_per_year=252,
     lw=1.25,
-    fontname="Arial",
+    #fontname="Arial",
     grayscale=False,
     figsize=(10, 3),
     ylabel="Sharpe",
@@ -877,7 +882,7 @@ def rolling_sharpe(
         hlw=1.5,
         ylabel=ylabel,
         title="Rolling Sharpe (%s)" % period_label,
-        fontname=fontname,
+        #fontname=fontname,
         grayscale=grayscale,
         lw=lw,
         figsize=figsize,
@@ -897,7 +902,7 @@ def rolling_sortino(
     period_label="6-Months",
     periods_per_year=252,
     lw=1.25,
-    fontname="Arial",
+    #fontname="Arial",
     grayscale=False,
     figsize=(10, 3),
     ylabel="Sortino",
@@ -921,7 +926,7 @@ def rolling_sortino(
         hlw=1.5,
         ylabel=ylabel,
         title="Rolling Sortino (%s)" % period_label,
-        fontname=fontname,
+        #fontname=fontname,
         grayscale=grayscale,
         lw=lw,
         figsize=figsize,
@@ -944,7 +949,7 @@ def monthly_heatmap(
     compounded=True,
     eoy=False,
     grayscale=False,
-    fontname="Arial",
+    #fontname="Arial",
     ylabel=True,
     savefig=None,
     show=True,
@@ -981,7 +986,7 @@ def monthly_heatmap(
             f"{returns_label} - Monthly Active Returns (%)\n",
             fontsize=14,
             y=0.995,
-            fontname=fontname,
+            #fontname=fontname,
             fontweight="bold",
             color="black",
         )
@@ -1008,7 +1013,7 @@ def monthly_heatmap(
             f"{returns_label} - Monthly Returns (%)\n",
             fontsize=12,
             y=0.995,
-            fontname=fontname,
+            #fontname=fontname,
             fontweight="bold",
             color="black",
         )
@@ -1033,7 +1038,8 @@ def monthly_heatmap(
 
     # align plot to match other
     if ylabel:
-        ax.set_ylabel("Years", fontname=fontname, fontweight="bold", fontsize=12)
+        ax.set_ylabel("Years", #fontname=fontname, 
+                      fontweight="bold", fontsize=12)
         ax.yaxis.set_label_coords(-0.1, 0.5)
 
     ax.tick_params(colors="#808080")
@@ -1075,7 +1081,7 @@ def monthly_returns(
     compounded=True,
     eoy=False,
     grayscale=False,
-    fontname="Arial",
+    #fontname="Arial",
     ylabel=True,
     savefig=None,
     show=True,
@@ -1089,7 +1095,7 @@ def monthly_returns(
         compounded=compounded,
         eoy=eoy,
         grayscale=grayscale,
-        fontname=fontname,
+        #fontname=fontname,
         ylabel=ylabel,
         savefig=savefig,
         show=show,
